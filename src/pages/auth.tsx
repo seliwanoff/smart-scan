@@ -56,7 +56,7 @@ export default function AuthPage() {
     navigate("/app");
   };
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 p-6">
+    <div className="min-h-screen flex items-center justify-center  from-blue-50 to-indigo-100 p-6">
       <Card className="w-full max-w-md shadow-2xl rounded-2xl">
         <CardHeader>
           <CardTitle className="text-2xl font-bold text-center">

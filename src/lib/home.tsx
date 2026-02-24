@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <div className="bg-white text-gray-800">
       {/* HERO SECTION */}
-      <section className="bg-gradient-to-br from-blue-600 to-indigo-700 text-white py-24 px-6">
+      <section className=" from-blue-600 to-indigo-700 text-white py-24 px-6">
         <div className="max-w-6xl mx-auto text-center">
           <h1 className="text-4xl md:text-6xl font-bold leading-tight">
             Convert Screenshots & Photos <br /> Into Editable Text in Seconds
@@ -105,7 +105,7 @@ export default function Home() {
               title="Free"
               price="₦0"
               features={[
-                "1 uploads per day",
+                "2 uploads per day",
                 "Basic OCR",
                 "Copy text only",
                 "Ads supported",

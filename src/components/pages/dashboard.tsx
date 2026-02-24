@@ -2,12 +2,12 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { account, storage, databases } from "../../lib/appwrite";
 import { Button } from "../..//components/ui/button";
-import { Loader2, UploadCloud, Download } from "lucide-react";
+import { Loader2, UploadCloud } from "lucide-react";
 import { cn } from "../../lib/utils";
 import { saveAs } from "file-saver";
-import * as docx from "docx";
-import { Packer, Paragraph } from "docx";
-import { ID, type UploadProgress, Query } from "appwrite";
+//import * as docx from "docx";
+//import { Packer, Paragraph } from "docx";
+import { ID, Query } from "appwrite";
 import Tesseract from "tesseract.js";
 import { checkSubscription } from "../../utils/subscription";
 import dayjs from "dayjs";
@@ -23,6 +23,8 @@ export default function AppPage() {
   const [ocrText, setOcrText] = useState("");
 
   const [isSubscriber, setIsSubscriber] = useState(false);
+
+  console.log(isSubscriber);
 
   const buckedId = import.meta.env.VITE_APPWRITE_BUCKET_ID;
   const databaseId = import.meta.env.VITE_APPWRITE_DATABASE_ID;
@@ -90,8 +92,7 @@ export default function AppPage() {
           return;
         }
       }
-
-      const upload = await storage.createFile(buckedId, ID.unique(), file);
+      await storage.createFile(buckedId, ID.unique(), file);
 
       const { data } = await Tesseract.recognize(file, "eng", {
         logger: (m) => {
