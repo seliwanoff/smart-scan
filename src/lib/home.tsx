@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <div className="bg-white text-gray-800">
       {/* HERO SECTION */}
-      <section className=" from-blue-600 to-indigo-700 text-white py-24 px-6">
+      <section className="bg-gradient-to-br from-blue-600 to-indigo-700 text-white py-24 px-6">
         <div className="max-w-6xl mx-auto text-center">
           <h1 className="text-4xl md:text-6xl font-bold leading-tight">
             Convert Screenshots & Photos <br /> Into Editable Text in Seconds
@@ -114,7 +114,7 @@ export default function Home() {
 
             <PricingCard
               title="Pro"
-              price="₦1,000/month"
+              price="₦3,000/month"
               highlight
               features={[
                 "Unlimited uploads",
