@@ -42,7 +42,7 @@ export default function AuthPage() {
       } else if (loginErr.status === 409) {
         await account.createEmailPasswordSession(email, password);
       } else {
-        setError(loginErr.message || "Authentication failed");
+        setError(loginErr.message || "Authentication fail");
         setLoading(false);
         return;
       }
