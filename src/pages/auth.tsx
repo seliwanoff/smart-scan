@@ -8,7 +8,7 @@ import {
   CardTitle,
   CardDescription,
 } from "../components/ui/card";
-import { Input } from "../components/ui/input";
+import { Input } from "@/components/ui/input";
 import { Label } from "../components/ui/label";
 import { Loader2 } from "lucide-react";
 import { Button } from "../components/ui/button";
@@ -32,17 +32,15 @@ export default function AuthPage() {
     } catch (loginErr: any) {
       if (loginErr.code === 401) {
         try {
-          // If user does not exist, create account
           await account.create("unique()", email, password);
           await account.createEmailPasswordSession(email, password);
-
-          // Login again
-          //   await account.createSession(email, password);
         } catch (regErr: any) {
           setError(regErr.message || "Registration failed");
           setLoading(false);
           return;
         }
+      } else if (loginErr.status === 409) {
+        await account.createEmailPasswordSession(email, password);
       } else {
         setError(loginErr.message || "Authentication failed");
         setLoading(false);
