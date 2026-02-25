@@ -24,7 +24,7 @@ export default function AppPage() {
 
   const [isSubscriber, setIsSubscriber] = useState(false);
 
-  console.log(isSubscriber);
+  // console.log(isSubscriber);
 
   const buckedId = import.meta.env.VITE_APPWRITE_BUCKET_ID;
   const databaseId = import.meta.env.VITE_APPWRITE_DATABASE_ID;
